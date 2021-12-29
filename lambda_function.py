@@ -11,7 +11,7 @@ def lambda_handler(event, context):
     if event['multiprocess']:
         print('run multiprocess')
         events = []
-        for num in range(5):
+        for num in range(10):
             events.append({'function': _calc, 'args': []})
             
         m = mp.Multiprocessing()
@@ -19,7 +19,7 @@ def lambda_handler(event, context):
         
     else:
         print('run sequential')
-        for num in range(5):
+        for num in range(10):
             _calc()
     
     end_time = time.time()
