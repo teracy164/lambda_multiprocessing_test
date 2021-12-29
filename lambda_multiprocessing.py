@@ -29,8 +29,6 @@ class Multiprocessing:
             self._proc(event)
             return
         
-        print('_proc: ', event)
-        print('proc')
         self.queue.append(event)
         p = mp.Process(target=event['function'], args=(event['args']))
         p.start()
